@@ -27,7 +27,7 @@ class ClaimDetailsScreen extends StatelessWidget {
               onChanged: (v) => description = v,
             ),
             TextField(
-              decoration: const InputDecoration(labelText: 'Amount (\$)'),
+              decoration: const InputDecoration(labelText: 'Amount (\$'),
               keyboardType: TextInputType.number,
               controller: TextEditingController(text: amount),
               onChanged: (v) => amount = v,
@@ -98,8 +98,6 @@ class ClaimDetailsScreen extends StatelessWidget {
   }
 
   void _showStatusDialog(BuildContext context, ClaimsProvider provider, Claim claim) {
-     ClaimStatus? selectedStatus;
-     
      // Determine next possible statuses
      List<ClaimStatus> options = [];
      if (claim.status == ClaimStatus.draft) {
@@ -179,9 +177,9 @@ class ClaimDetailsScreen extends StatelessWidget {
               width: double.infinity,
               padding: const EdgeInsets.all(16),
               decoration: BoxDecoration(
-                color: _getStatusColor(claim.status).withOpacity(0.1),
+                color: _getStatusColor(claim.status).withAlpha(25),
                 borderRadius: BorderRadius.circular(12),
-                border: Border.all(color: _getStatusColor(claim.status).withOpacity(0.3)),
+                border: Border.all(color: _getStatusColor(claim.status).withAlpha(76)),
               ),
               child: Row(
                 children: [
@@ -202,7 +200,7 @@ class ClaimDetailsScreen extends StatelessWidget {
                     label: const Text("Update"),
                     style: OutlinedButton.styleFrom(
                       foregroundColor: _getStatusColor(claim.status),
-                      side: BorderSide(color: _getStatusColor(claim.status).withOpacity(0.5)),
+                      side: BorderSide(color: _getStatusColor(claim.status).withAlpha(128)),
                     ),
                   ),
                 ],
