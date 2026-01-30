@@ -2,7 +2,7 @@ import 'package:flutter/foundation.dart';
 import 'package:claim_management/models/claim.dart';
 
 class ClaimsProvider with ChangeNotifier {
-  List<Claim> _claims = [];
+  final List<Claim> _claims = [];
 
   List<Claim> get claims => _claims;
 
@@ -47,7 +47,7 @@ class ClaimsProvider with ChangeNotifier {
     final index = _claims.indexWhere((c) => c.id == claimId);
     if (index != -1) {
       _claims[index].advanceAmount = amount;
-      _claims[index].history.add('Updated advance amount to \$${amount}');
+      _claims[index].history.add('Updated advance amount to \$$amount');
       notifyListeners();
     }
   }
@@ -56,7 +56,7 @@ class ClaimsProvider with ChangeNotifier {
     final index = _claims.indexWhere((c) => c.id == claimId);
     if (index != -1) {
       _claims[index].settledAmount = amount;
-      _claims[index].history.add('Updated settled amount to \$${amount}');
+      _claims[index].history.add('Updated settled amount to \$$amount');
       notifyListeners();
     }
   }

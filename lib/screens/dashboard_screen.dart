@@ -84,7 +84,7 @@ class DashboardScreen extends StatelessWidget {
                     child: ListTile(
                       contentPadding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
                       leading: CircleAvatar(
-                        backgroundColor: _getStatusColor(claim.status).withOpacity(0.1),
+                        backgroundColor: _getStatusColor(claim.status).withAlpha(25),
                         child: Icon(_getStatusIcon(claim.status), color: _getStatusColor(claim.status)),
                       ),
                       title: Text(claim.patientName, style: GoogleFonts.poppins(fontWeight: FontWeight.w600)),
@@ -171,7 +171,7 @@ class _SummaryCard extends StatelessWidget {
           color: Colors.white,
           borderRadius: BorderRadius.circular(16),
           boxShadow: [
-            BoxShadow(color: Colors.black.withOpacity(0.05), blurRadius: 10, offset: const Offset(0, 4)),
+            BoxShadow(color: Colors.black.withAlpha(12), blurRadius: 10, offset: const Offset(0, 4)),
           ],
         ),
         child: Column(

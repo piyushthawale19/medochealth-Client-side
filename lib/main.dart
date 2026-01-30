@@ -25,7 +25,7 @@ class ClaimManagementApp extends StatelessWidget {
             seedColor: Colors.blueAccent,
             primary: Colors.blueAccent,
             secondary: Colors.orangeAccent,
-            background: Colors.grey[50],
+            surface: Colors.grey[50],
           ),
           textTheme: GoogleFonts.poppinsTextTheme(),
           appBarTheme: AppBarTheme(
